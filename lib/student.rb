@@ -39,6 +39,10 @@ attr_reader :id
     DB[:conn].execute(sql)
   end
   
-  def self.create 
+  def self.create(name, album)
+    song = Song.new(name, album)
+    song.save
+    song
+  end
   
 end
