@@ -30,6 +30,9 @@ attr_accessor :id,:name, :grade
   end
   
   def self.drop_table(name)
+    sql = "DROP TABLE name;"
+    DB[:conn].execute(sql)
+  end
     
   
 end
