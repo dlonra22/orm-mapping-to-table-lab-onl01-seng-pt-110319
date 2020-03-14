@@ -29,4 +29,7 @@ attr_accessor :id,:name, :grade
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
   
+  def self.drop_table(name)
+    
+  
 end
