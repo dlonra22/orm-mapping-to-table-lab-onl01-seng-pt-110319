@@ -1,6 +1,7 @@
 class Student
 attr_accessor :name, :grade
 attr_reader :id
+
  @@all = []
  
  def initialize(name, grade, id=nil)
@@ -32,10 +33,9 @@ attr_reader :id
   
   def self.drop_table(name)
     sql = <<-SQL 
-    DROP TABLE (name)
-    VALUES (?)
+    DROP TABLE students
     SQL
-    DB[:conn].execute(sql,self.name)
+    DB[:conn].execute(sql)
   end
     
   
